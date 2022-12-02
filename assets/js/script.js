@@ -1,72 +1,134 @@
 // Connects to the HTML
-var quizQuestions = document.getElementById("questions");
+var quizBox = document.getElementById("questions");
 var answerButton = document.getElementById("answer");
+var scoreboard = document.getElementById("score");
+
+
+makeQuiz(questions, quizBox, scoreboard, answerButton);
+
 
 // Creates the quiz
-function generateQuiz{
+function makeQuiz(questions, quizBox, scoreboard, answerButton) {
+    
+// Shows the questions and answers
+    function questionsAppear(questions, quizBox) {
+        var info =[];
+        var answers;
+
+        for(var i = 0; i < questions.length; i++) {
+            answers = [];
+
+            for(letter in questions[i].answers) {
+                answers.push(
+                    "<label>" + "<input type='radio' name='question"+i+"' value='"+ letter +"'>" + letter + ": " + questions[i].answers[letter] + "</label>"
+                );
+            }
+
+            info.push(
+                "<section class ='question'>" + questions[i].question + "</section>" + "<section class ='answers'>" + answers.join("") + "</section>"
+            );
+        }
+
+        quizBox.innerHTML = info.join("");
+
+    }
+
+    questionsAppear(questions, quizBox);
+
+// Shows the user's answers
+    function finalScore(questions, quizBox, scoreboard) {
+        var userAnswers = quizBox.querySelectorAll(".answers");
+
+        var userChoice = "";
+        var correctAmount = 0;
+
+        for(var i = 0; i < questions.length; i++) {
+            userChoice = (userAnswers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+
+            if(userChoice === questions[i].correctAnswer) {
+                correctAmount++;
+
+                userAnswers[i].style.color = "green";
+            } else {
+                userAnswers[i].style.color = "orange";
+            }
+        }
+
+        scoreboard.innerHTML = correctAmount + " of " + questions.length;
+
+    }
+
+
+    questionsAppear(questions, quizBox);
+
+    answerButton.onclick = function() {
+        finalScore(questions, quizBox, scoreboard);
+    }
 
 }
 
-// Calls the quiz to run
-generateQuiz();
 
-var jsQuestions = [
+// Quiz questions
+var questions = [
     {
-    question: "Which of the following are data types?"
+    question: "Which of the following are data types?",
     answers: {
-    1: "String",
-    2: "Number",
-    3: "Boolean",
-    4: "All of the above"
+    a: 'String',
+    b: 'Number',
+    c: 'Boolean',
+    d: 'All of the above'
     },
-    correctAnswer: "4"
-},
+    correctAnswer: 'd'
+}, 
 {
-    question: "Variables can be all numbers."
+    question: "Variables can be all numbers.",
     answers: {
-    1: "True.",
-    2: "False.",
+    a: "True.",
+    b: "False.",
     },
-    correctAnswer: "2"
-},
+    correctAnswer: "b"
+}, 
 {
-    question: "Which of the following are comparatives?"
+    question: "Which of the following are comparatives?",
     answers: {
-    1: "||",
-    2: "&",
-    3: "&|",
-    4: "|&"
+    a: "||",
+    b: "&",
+    c: "&|",
+    d: "|&"
     },
-    correctAnswer: "1"
-},
+    correctAnswer: "a"
+}, 
 {
-    question: "How do you find the length of ?"
+    question: "What does NaN stand for?",
     answers: {
-    1: "String",
-    2: "Number",
-    3: "Boolean",
-    4: "All of the above"
+    a: "Not a Numerator",
+    b: "Not a Number",
+    c: "Nothing is a Number",
+    d: "Non of the above"
     },
-    correctAnswer: "4"
-},
+    correctAnswer: "b"
+}, 
 {
-    question: "Which of the following are data types?"
+    question: "Which of the following is not a coding language?",
     answers: {
-    1: "String",
-    2: "Number",
-    3: "Boolean",
-    4: "All of the above"
+    a: "CSS",
+    b: "HTML",
+    c: "SOS",
+    d: "JS"
     },
-    correctAnswer: "4"
-},
+    correctAnswer: "c"
+}, 
 {
-    question: "Which of the following are data types?"
+    question: "Which of the following is a method used for an array?",
     answers: {
-    1: "String",
-    2: "Number",
-    3: "Boolean",
-    4: "All of the above"
+    a: ".pop()",
+    b: ".poke()",
+    c: ".prod()",
+    d: ".pour()"
     },
-    correctAnswer: "4"
+    correctAnswer: "a"
 },
 ];
+
+
+makeQuiz(questions, quizBox, scoreboard, answerButton);
