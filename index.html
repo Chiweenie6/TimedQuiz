@@ -8,23 +8,22 @@
 </head>
 
 <body>
-    <header class="beginBtn"><button>Begin Quiz</button></header>
+    <button onclick="beginQuiz()">Begin Quiz</button>
 
-    <section class="ruleBox">
-        <div class="ruleTitle"><span>Welcome to my Quiz</span></div>
-        <div class="ruleS">
-            <div class="rules">1. The topic is JavaScript.</div>
-            <div class="rules">2. You will have <span>15 seconds</span> to answer each question.</div>
-            <div class="rules">3. If your answer is wrong, time will be deducted.</div>
-            <div class="rules">4. Lets begin.</div>
-        </section>
+    <header id="ruleBox">
+        <div class="ruleTitle">Welcome to my Quiz</div>
+        <ul class="ruleSheet">
+            <li>The topic is JavaScript.</li>
+            <li>You will have <span>60 seconds</span> to finish the quiz.</li>
+            <li>If your answer is wrong, time will be deducted.</li>
+            <li>Lets begin.</li>
+        </ul>
         <div class="buttons">
-            <button class="stop">Exit Quiz</button>
             <button class="continue">Next</button>
         </div>
-    </div>
+    </header>
     
-    <div class="quizContainer">
+    <!-- <div class="quizContainer">
         <header>
             <div class="title">Quiz Yourself</div>
             <div class="timer">
@@ -33,12 +32,11 @@
             </div>
             <div class="clock"></div>
         </header>
+
         <section>
-            <div class="quizQuestions">
-                
+            <div class="quizQuestions">    
             </div>
-            <div class="options">
-                
+            <div class="options">  
             </div>
         </section>
         
@@ -59,7 +57,7 @@
             <button class="continue">Replay</button>
             <button class="quit">Quit</button>
         </div>
-    </section>
+    </section> -->
 
 
     <script src="./assets/js/script.js"></script>
