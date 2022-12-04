@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Yourself</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
 </head>
 
 <body>
-    <button onclick="beginQuiz()">Begin Quiz</button>
+    <button onclick="beginQuiz()">Welcome</button>
 
     <header id="ruleBox">
         <div class="ruleTitle">Welcome to my Quiz</div>
@@ -21,15 +22,28 @@
         
     </header>
     
-    <button onclick="quizBox">Next</button>
+    <button onclick="quizBox()">Next</button>
 
-    <section>
-        <p id="quizCounter">
 
-        </p>
+    <section id="questionBox">
+        Hello
+        <div id="quizCounter">
+        </div>
+
+        <div id="quizSentence">
+        </div>
+
+        <div id="answerChoice">
+            <button id="answer1"></button>
+            <button id="answer2"></button>
+            <button id="answer3"></button>
+            <button id="answer4"></button>
+        </div>
+
     </section>
 
-    <main class="row text-center d-flex justify-content-center pt-5 mb-3">
+
+    <main class="row text-center justify-content-center d-flex pt-5 mb-3">
         <section class="card text-center d-flex">
             <h1 class="card-header">
             LeaderBoard
@@ -50,6 +64,8 @@
             </div>
         </section>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/script1.js"></script>

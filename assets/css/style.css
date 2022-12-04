@@ -3,7 +3,7 @@ header {
 }
 
 button {
-    background-color: rgb(25, 0, 255);
+    background-color: rgb(12, 80, 4);
     color: #fff;   
 }
 
@@ -15,7 +15,7 @@ button {
     width: 100%;
     padding: 50px 0;
     text-align: center;
-    background-color: lightblue;
+    background-color: rgb(0, 255, 191);
     margin-top: 20px;
 }
 
