@@ -2,37 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Yourself</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
-    <header>
-        <h1>Welcome to my quiz.</h1>
-        <h2>The topic is JavaScript.</h2>
-        <h3>Lets begin.</h3>
-    </header>
+    <header class="beginBtn"><button>Begin Quiz</button></header>
+
+    <section class="ruleBox">
+        <div class="ruleTitle"><span>Welcome to my Quiz</span></div>
+        <div class="ruleS">
+            <div class="rules">1. The topic is JavaScript.</div>
+            <div class="rules">2. You will have <span>15 seconds</span> to answer each question.</div>
+            <div class="rules">3. If your answer is wrong, time will be deducted.</div>
+            <div class="rules">4. Lets begin.</div>
+        </section>
+        <div class="buttons">
+            <button class="stop">Exit Quiz</button>
+            <button class="continue">Next</button>
+        </div>
+    </div>
     
-    <section id="questions">
-
+    <div class="quizContainer">
+        <header>
+            <div class="title">Quiz Yourself</div>
+            <div class="timer">
+                <div class="timeRemaining">Time Left</div>
+                <div class="tSeconds">60</div>
+            </div>
+            <div class="clock"></div>
+        </header>
+        <section>
+            <div class="quizQuestions">
+                
+            </div>
+            <div class="options">
+                
+            </div>
+        </section>
+        
+        <footer>
+            <div class="questionAmount">
+                
+            </div>
+            <button class="nextBtn">Next</button>
+        </footer>
+    </div>
+    
+    <section class="scoreboard">
+        </div>
+        <div class="finished">HooRay! You've completed the Quiz!</div>
+        <div class="userScore">
+        </div>
+        <div class="buttons">
+            <button class="continue">Replay</button>
+            <button class="quit">Quit</button>
+        </div>
     </section>
 
-
-    <button id="answer">Submit</button>
-
-
-    <section id="score">
-
-    </section>
-
-
-
-
-    <footer>
-
-    </footer>
 
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/script1.js"></script>
