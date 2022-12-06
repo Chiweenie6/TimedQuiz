@@ -15,7 +15,9 @@ N/A
 ## Usage
 To test one's knowledge of JavaScript. To also figure out what areas need further studying or to compare scores for bragging rites.
 
-Image:
+Image:![image](https://user-images.githubusercontent.com/113393706/205840623-1eae3773-2927-4ce7-b87e-5536fa285a88.png)
+![image](https://user-images.githubusercontent.com/113393706/205840709-cfd1bad6-9a14-42bd-944d-623ea889005f.png)
+
 
 
 ## Credits
