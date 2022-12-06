@@ -3,8 +3,6 @@
     box-sizing: border-box;
 }
 
-
-
 body {
     padding: 0;
     margin: 0;
@@ -32,26 +30,29 @@ body {
 .answerButton {
     border-radius: 10px;
     padding: 6px 6px;
-    background-color: aqua;
+    background-color: lightgreen;
     border: 5px solid;
     color: black;
     outline: none;
 }
 .answerButton:hover {
     border-color: black;
+    background-color: blue;
+    cursor: pointer;
 }
 
-.rightButton {
+.right {
     color: darkgreen;
 }
 
-.wrongButton{
+.wrong{
     color: darkred;
 }
 
 .beginButton:hover, .nextButton:hover {
     border-color: black;
     background-color: lightblue;
+    cursor: pointer;
 }
 
 .beginButton, .nextButton {
@@ -70,58 +71,3 @@ body {
 .disappear {
     display: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* *{
-    box-sizing: border-box;
-}
-
-.welcome {
-background-color: rgb(212, 233, 24);
-}
-
-body {
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-}
-
-#begin {
-    font-size: 75px;
-    font-weight: 800;
-    background-color: rgb(68, 131, 27);
-}
-
-#questionBox {
-border-radius: 5px;
-padding: 15px;
-} */

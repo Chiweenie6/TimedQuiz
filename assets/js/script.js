@@ -2,6 +2,7 @@ const beginButton = document.getElementById("beginButton");
 const quizBox = document.getElementById("quizBox");
 const quizQuestion = document.getElementById("quizQuestion");
 const quizAnswers = document.getElementById("quizAnswers");
+const nextButton = document.getElementById("nextButton");
 
 
 beginButton.addEventListener("click", beginQuiz);
@@ -19,7 +20,12 @@ function beginQuiz() {
 }
 
 function cycleQuestions() {
+    squareOne();
     displayQuestion(questionMix[questionNumber]);
+}
+
+function displayQuestion(question){
+    quizQuestion.innerText = question.question;
     question.choices.forEach(choice => {
         const button = document.createElement("button");
         button.innerText = choice.answer;
@@ -27,27 +33,56 @@ function cycleQuestions() {
         if (choice.right) {
             button.dataset.right = choice.right;
         }
-        button.addEventListener("click", checkAnswer)
+        button.addEventListener("click", checkAnswer);
+        quizAnswers.appendChild(button);
     })
 
 }
 
-
-
-function displayQuestion(question){
-    quizQuestion.innerText = question.question;
-
-}
-
-
-
-function checkAnswer() {
+function squareOne()  {
+    declareAnswer(document.body);
+    nextButton.classList.add("disappear");
+    while (quizAnswers.firstChild) {
+        quizAnswers.removeChild(quizAnswers.firstChild);
+    }
 
 }
 
+function checkAnswer(e) {
+    const clickedButton = e.target;
+    const right = clickedButton.dataset.right;
+    declareAnswer(document.body, right);
+    Array.from(quizAnswers.children).forEach(button => {
+        declareAnswer(button, button.dataset.right)
+    })
+    if (questionMix.length > questionNumber +1) {
+    nextButton.classList.remove("disappear");
+    } else {
+        beginButton.innerText = "beginAgain";
+        beginButton.classList.remove("disappear");
+    }
+}
 
+function declareAnswer(element, right) {
+    eraseAnswer(element)
+    if (right) {
+        element.classList.add("right")
+    } else {
+        element.classList.add("wrong")
+    }
+}
 
+function eraseAnswer(element) {
+    element.classList.remove("right");
+    element.classList.remove("wrong");
 
+}
+
+nextButton.addEventListener("click", () => {
+    questionNumber++;
+    cycleQuestions();
+
+})
 
 
 
@@ -101,9 +136,6 @@ let questionList = [
     ]
     }
   ];
-
-
-
 
 
 
