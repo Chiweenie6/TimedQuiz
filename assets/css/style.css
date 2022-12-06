@@ -41,7 +41,35 @@ body {
     border-color: black;
 }
 
+.rightButton {
+    color: darkgreen;
+}
 
+.wrongButton{
+    color: darkred;
+}
+
+.beginButton:hover, .nextButton:hover {
+    border-color: black;
+    background-color: lightblue;
+}
+
+.beginButton, .nextButton {
+    font-weight: bolder;
+    padding: 15px 20px;
+    font-size: 15px;
+    border-radius: 50px;
+}
+
+.quizMovement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.disappear {
+    display: none;
+}
 
 
 

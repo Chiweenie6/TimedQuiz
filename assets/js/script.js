@@ -1,3 +1,106 @@
+const beginButton = document.getElementById("beginButton");
+const quizBox = document.getElementById("quizBox");
+const quizQuestion = document.getElementById("quizQuestion");
+const quizAnswers = document.getElementById("quizAnswers");
+
+
+beginButton.addEventListener("click", beginQuiz);
+
+let questionNumber, questionMix;
+
+
+function beginQuiz() {
+    beginButton.classList.add("disappear");
+    quizBox.classList.remove("disappear");
+    questionNumber = 0;
+    questionMix = questionList.sort(() => Math.floor(Math.random() * questionList.length + 1));
+    cycleQuestions();
+
+}
+
+function cycleQuestions() {
+    displayQuestion(questionMix[questionNumber]);
+    question.choices.forEach(choice => {
+        const button = document.createElement("button");
+        button.innerText = choice.answer;
+        button.classList.add("btn");
+        if (choice.right) {
+            button.dataset.right = choice.right;
+        }
+        button.addEventListener("click", checkAnswer)
+    })
+
+}
+
+
+
+function displayQuestion(question){
+    quizQuestion.innerText = question.question;
+
+}
+
+
+
+function checkAnswer() {
+
+}
+
+
+
+
+
+
+
+let questionList = [
+    { question: "Which of the following are data types?",
+    choices: [
+      {answer: "String", right: false},
+      {answer: "Number", right: false},
+      {answer: "Boolean", right: false},
+      {answer: "All of the above", right: true}
+    ]
+    },
+    { question: "Variables defined with 'let' ",
+    choices: [
+      {answer: "can be redeclared unlimited times.", right: false},
+      {answer: "can only be redeclared once.", right: false},
+      {answer: "cannot be redeclared.", right: true},
+      {answer: "can only be redeclared twice.", right: false}
+    ]
+    },
+    { question: "Which of the following are comparatives?",
+    choices: [
+      {answer: "||", right: true},
+      {answer: "&", right: false},
+      {answer: "&|", right: false},
+      {answer: "|&", right: false}
+    ]
+    },
+    { question: "What does NaN stand for?",
+    choices: [
+      {answer: "Not a Numerator", right: false},
+      {answer: "Not a Number", right: true},
+      {answer: "Nothing is a Number", right: true},
+      {answer: "None of the above", right: true}
+    ]
+    },
+    { question: "Which of the following is not a coding language?",
+    choices: [
+     {answer: "CSS", right: false},
+     {answer: "HTML", right: false},
+     {answer: "SOS", right: true},
+     {answer: "JS", right: false}
+    ]
+    },
+    { question: "Which of the following is a method used for an array?",
+    choices: [
+      {answer: ".pop()", right: true},
+      {answer: ".poke()", right: false},
+      {answer: ".prod()", right: false}, 
+      {answer: ".pour()", right: false}
+    ]
+    }
+  ];
 
 
 
