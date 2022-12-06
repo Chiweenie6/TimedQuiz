@@ -117,6 +117,8 @@ const c1 = document.getElementById("c1");
 const d1 = document.getElementById("d1");
 
 
+
+
 // adding user's score
 function scoreCard() {
     let userQuestion = 0;
@@ -132,7 +134,7 @@ function scoreCard() {
         }
     }
 }
-
+}
 
 
 
