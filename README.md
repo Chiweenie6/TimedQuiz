@@ -5,7 +5,7 @@ A timed quiz built with JavaScript
 ## Description
 This is an interective timed quiz with multiple choice questions. Wrong answers decrease the time limit to complete the quiz. The quiz is scored when all the questions have been answered or the time limit runs out. The quiz saves the users final score on the local storage. The saved scores have the ability to be saved together and then compared to one another.
 
-The deployed URL - 
+The deployed URL - https://chiweenie6.github.io/TimedQuiz/
 
 
 ## Installation
